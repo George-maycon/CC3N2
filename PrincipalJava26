@@ -1,0 +1,19 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.george26;
+
+/**
+ *
+ * @author alunolab13
+ */
+public class Principal {
+
+    public static void main(String[] args) {
+        
+        Conta c1 = new Conta();
+       
+        System.out.println("Hello World!");
+    }
+}
