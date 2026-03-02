@@ -1,0 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.george123;
+import java.util.Scanner;
+/**
+ *
+ * @author alunolab13
+ */
+public class Principal {
+
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        Conta c1 = new Conta(123, 6630, 5000, 500);
+        Conta c2 = new Conta();
+        Scanner sc = new Scanner(System.in);
+                   
+        System.out.print("Digite o numero da Agencia: ");
+        c2.setAgencia(sc.nextInt());
+        
+        System.out.print("Digite o numero da conta: ");
+        c2.setNumero(sc.nextInt());
+        
+        System.out.print("Digite o credito: R$");
+        c2.creditar(sc.nextDouble());
+        
+        System.out.print("Digite o debito: R$");
+        c2.debitar(sc.nextDouble());
+        
+        c1.transferir(c2, 6000);
+        
+        System.out.println("Saldo total Conta 1 = R$" + c1.getSaldo());
+        System.out.println("Saldo total Conta 2 = R$" + c2.getSaldo());
+        System.out.println("Saldo total Conta 1 com limite especial = R$" + c1.getSaldoDisponivel());
+    }
+}
