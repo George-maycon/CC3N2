@@ -1,0 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+package com.mycompany.george123;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author alunolab13
+ */
+public class Principal {
+
+    public static void main(String[] args) {
+
+        ArrayList<Conta> contas = new ArrayList<>();
+
+        for (int i = 0; i < 2; i++) {
+            
+            int agencia = Integer.parseInt(JOptionPane.showInputDialog("Digite sua agencia da conta" + (i + 1) + ": "));
+
+            int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite numero da conta " + (i + 1) + ": "));
+
+            double saldo = Double.parseDouble(JOptionPane.showInputDialog("Digite saldo conta " + (i + 1) + ": "));
+
+            double limite = Double.parseDouble(JOptionPane.showInputDialog("Digite seu limite conta " + (i + 1) + ": "));
+
+            Conta c = new Conta(agencia, numero, saldo, limite);
+            contas.add(c);
+        }
+        /* Conta c1 = new Conta(123, 6630, 5000, 500);
+        Conta c2 = new Conta();
+        Scanner sc = new Scanner(System.in);
+                   
+        System.out.print("Digite o numero da Agencia: ");
+        c2.setAgencia(sc.nextInt());
+        
+        System.out.print("Digite o numero da conta: ");
+        c2.setNumero(sc.nextInt());
+        
+        System.out.print("Digite o credito: R$");
+        c2.creditar(sc.nextDouble());
+        
+        System.out.print("Digite o debito: R$");
+        c2.debitar(sc.nextDouble());*/
+        Conta c1 = contas.get(0);
+        Conta c2 = contas.get(1);
+        c1.transferir(c2, 6000);
+
+        JOptionPane.showMessageDialog(null, c1.getSaldoDisponivel());
+        JOptionPane.showMessageDialog(null, c2.getSaldoDisponivel());
+
+        //System.out.println("Saldo total Conta 1 = R$" + c1.getSaldo());
+        //System.out.println("Saldo total Conta 2 = R$" + c2.getSaldo());
+        //System.out.println("Saldo total Conta 1 com limite especial = R$" + c1.getSaldoDisponivel());
+    }
+}
