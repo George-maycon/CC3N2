@@ -1,0 +1,10 @@
+select top 3
+descricao,sum(pag_valor) as total from Pagar,
+ cidade,
+ empresa,
+ uf
+
+ where
+fkcidade=idcidade and fkuf=IDuf
+ group by descricao,pag_valor
+ order by sum(pag_valor) desc

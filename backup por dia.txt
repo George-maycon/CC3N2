@@ -1,0 +1,16 @@
+*/ backup por dia 
+
+declare @nomeBkp varchar (80)
+set @nomeBkp =
+case DATEPART(dw,getdate())
+when 1 then 'domingo'
+when 2 then 'segunda'
+when 3 then 'terca'
+when 4 then 'quanta'
+when 5 then 'quinta'
+when 6 then 'sexta'
+when 7 then 'sabado'
+end
+
+set @nomeBkp = 'c:/DevC/' +@nomeBkp
+backup database UVV to disk = @nomeBkp

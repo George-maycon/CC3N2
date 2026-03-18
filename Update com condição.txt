@@ -1,0 +1,6 @@
+*/ Update com condição
+
+Update empresa set  Emp_Telefone = 'Não informado'
+where Emp_Telefone is null 
+and Idempresa in
+(select distinct fkempresa from Pagar)

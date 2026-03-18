@@ -1,0 +1,21 @@
+declare @dataincial date
+declare @datafinal date
+
+select
+emp_razaosocial,
+pag_fatura,
+pag_datavencimento,
+case DATEPART(dw,pag_datavencimento)
+when 1 then 'domingo'
+when 2 then 'segunda'
+when 3 then 'terca'
+when 4 then 'quanta'
+when 5 then 'quinta'
+when 6 then 'sexta'
+when 7 then 'sabado'
+end as dia,
+case when Pag_DataPagto is null then 'em aberto' else 'ja pago' end as status
+from Pagar,
+empresa
+where FkEmpresa=Idempresa
+And Pag_DataPagto >= @dataincial and Pag_DataPagto <= @datafinal
